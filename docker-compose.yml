@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  vaulthunters:
+    image: shitea.chast.net/game-servers/vaulthunters:latest
+    restart: unless-stopped
+    env_file: .env
+    tty: true
+    ports:
+        - "25565:25565"
+    volumes:
+      - ./world:/server/world
+      - ./backups:/server/backups
+    environment:
+        - EULA=${EULA}
+        - OPS=${OPS} 
+        - CBLOCK=${CBLOCK}
+        - JVM_OPTS=${JVM_OPTS}
+#        - JAVA_HOME : "/usr/local/openjdk-8"
+#        - JAVA_VERSION : "17"
+        - MOTD=${MOTD}
+#        - LEVEL : "Vault-Hunters"
+#        - LEVELSEED : default is random
+        - GAMEMODE=${GAMEMODE}
+        - DIFFICULTY=${DIFFICULTY}
