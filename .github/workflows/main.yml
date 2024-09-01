@@ -19,7 +19,7 @@ jobs:
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Build Docker image
-        run: docker buildx build --tag ghcr.io/Bchast93/vaulthunters:latest --load .
+        run: docker buildx build --tag ghcr.io/bchast93/vaulthunters:latest --load .
 
       - name: Push Docker image
-        run: docker push ghcr.io/Bchast93/vaulthunters:latest
+        run: docker push ghcr.io/bchast93/vaulthunters:latest
